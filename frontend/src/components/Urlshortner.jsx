@@ -10,7 +10,8 @@ function Urlshortner() {
         event.preventDefault();
         setError('');
         try {
-            const response= await axios.post('http://localhost:4000/url/shorten',{
+            // const response= await axios.post('http://localhost:4000/url/shorten',{
+                const response= await axios.post('https://url-shortner-1-cz3t.onrender.com/shorten',{
                 originalUrl:originalUrl
             });
             setShortUrl(response.data.shortUrl);
@@ -35,11 +36,13 @@ function Urlshortner() {
                 <div>
                     <h2>Shortened URL:</h2>
                     <a
-                        href={`http://localhost:4000/url/${shortUrl}`} // Update this to include the full redirect path
+                        //   href={`http://localhost:4000/url/${shortUrl}`} 
+                        href={`https://url-shortner-1-cz3t.onrender.com/${shortUrl}`} // Update this to include the full redirect path
                         target="_blank" 
                         rel="noopener noreferrer"
                     >
-                           {`http://localhost:4000/url/${shortUrl}`}
+                           {/* {`http://localhost:4000/url/${shortUrl}`} */}
+                           {`https://url-shortner-1-cz3t.onrender.com/${shortUrl}`}
                     </a>
                 </div>
             )}
